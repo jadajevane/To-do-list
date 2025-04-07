@@ -25,7 +25,6 @@ function createTaskElement(taskInputValue) {
         if (checkbox.checked) {
             label.classList.add("line-through", "text-gray-400");
             newTask.setAttribute("data-status", "completed");
-        
             if (!completedTasks.includes(taskText)) {
                 completedTasks.push(taskText);
                 localStorage.setItem("completed", JSON.stringify(completedTasks));
@@ -33,11 +32,9 @@ function createTaskElement(taskInputValue) {
         } else {
             label.classList.remove("line-through", "text-gray-400");
             newTask.setAttribute("data-status", "active");
-        
             completedTasks = completedTasks.filter(task => task !== taskText);
             localStorage.setItem("completed", JSON.stringify(completedTasks));
         }
-        
     });
 
     leftDiv.appendChild(checkbox);
@@ -64,7 +61,6 @@ function createTaskElement(taskInputValue) {
         let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
         tasks = tasks.filter(task => task !== originalText);
         localStorage.setItem("tasks", JSON.stringify(tasks));
-
     });
 
     const deleteBtn = document.createElement("button");
@@ -133,7 +129,6 @@ addTask.addEventListener("click", function () {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 
     document.querySelector("#new-task").value = "";
-
 });
 
 window.addEventListener("DOMContentLoaded", () => {
