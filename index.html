@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="output.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div class="max-w-xl w-full p-4">
+        <h1 class="text-4xl text-center mb-1">My Todo List</h1>
+        <p class="text-sm text-gray-500 text-center mb-6">Stay organized queen</p>
+        
+        <div class="flex items-center gap-2 mb-6">
+            <input id="new-task" type="text" placeholder="Add a new task..." class="flex-grow p-2 border border-gray-200 rounded-lg">
+            <button id="add-task" class="bg-pink-500 text-white px-4 py-2 rounded-lg">Add Task</button>
+        </div>
+        
+        <div class="flex justify-center gap-4 mb-6">
+            <button data-filter="all" class="filter-btn px-4 py-1 rounded-full bg-pink-500 text-white">All</button>
+            <button data-filter="active" class="filter-btn px-4 py-1 rounded-full text-gray-700">Active</button>
+            <button data-filter="completed" class="filter-btn px-4 py-1 rounded-full text-gray-700">Completed</button>
+        </div>
+        
+        <ul id="task-list" class="space-y-4"></ul>
+    </div>
+</body>
+</html>
